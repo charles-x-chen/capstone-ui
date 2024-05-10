@@ -1,0 +1,222 @@
+* {
+  box-sizing: border-box;
+}
+
+div {
+  border: 1px solid blue;
+}
+
+body {
+  margin: 0;
+  font-family: Muli, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  background-color: var(--white);
+  border: 1px solid blue;
+  max-width: unset;
+  width: 100%;
+}
+
+.root-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  max-width: unset;
+  max-height: unset;
+}
+
+.shopping-bag-page-title {
+  display: block;
+  justify-content: center;
+  width: 70%;
+  margin-left: 15%;
+  border: 1px solid blue;
+  overflow: hidden;
+  padding-left: 50px;
+  padding-bottom: 50px;
+  background: white;
+  margin-top: 20px;
+}
+.shopping-bag-page-title h1 {
+  text-align: center;
+}
+.shopping-bag-page-title hr {
+  width: 100px;
+  height: 5px;
+  background: blue;
+}
+
+.bag-content-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 70%;
+  height: 680px;
+  margin-left: 15%;
+  border: 1px solid blue;
+  overflow: hidden;
+  padding-left: 50px;
+  padding-bottom: 50px;
+  background: white;
+  margin-top: 50px;
+}
+.bag-content-section .product-image-list .list-image-bg {
+  margin-left: 10px;
+}
+.misc-section {
+  display: inline-block;
+  flex-direction: row;
+  justify-content: center;
+  width: 70%;
+  height: auto;
+  margin-left: 18%;
+  border: 1px solid blue;
+  overflow: hidden;
+  padding-bottom: 50px;
+  background: white;
+}
+.misc-section .misc-accordian {
+  font-size: 36px;
+}
+.misc-section .misc-accordian .shipping-accordian {
+  font-size: 36px;
+}
+.misc-section .misc-accordian .coupon-accordian {
+  font-size: 36px;
+}
+.misc-section .misc-accordian .gift-accordian {
+  font-size: 36px;
+}
+
+header {
+  border: 1px solid blue;
+}
+
+.header-row {
+  display: flex;
+  width: 100%;
+  height: 80px;
+  justify-content: center; /* Align items horizontally in the center */
+  align-items: center; /* Align items vertically in the center */
+  background: rgba(0, 0, 255, 0.7);
+  color: white;
+  column-gap: 30px;
+  font-size: 14px;
+}
+.header-row .left-column {
+  float: left;
+  width: 40%;
+  border: 0px solid red;
+  color: var(--white);
+  text-align: center;
+  font-size: 24px;
+  text-decoration: unset;
+}
+.header-row .category-menu {
+  display: flex;
+  width: 100%;
+  height: 48px;
+  list-style: none;
+  overflow: visible;
+  border: 0px solid red;
+  color: white;
+  margin-top: 0;
+}
+.header-row .category-menu li {
+  padding: 20px;
+  color: white;
+}
+.header-row .right-column {
+  float: left;
+  color: white;
+  width: 40%;
+  justify-content: left; /* Align items horizontally in the center */
+  align-items: center; /* Align items vertically in the center */
+  border: 0px solid red;
+}
+.header-row .account-navbar {
+  display: flex;
+  width: 100%;
+  color: white;
+  overflow: hidden;
+  border: 0px solid red;
+  justify-content: left; /* Align items horizontally in the center */
+  align-items: center; /* Align items vertically in the center */
+}
+
+footer {
+  font-size: 14px;
+}
+footer .footer-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 75%;
+  max-height: 350px;
+  margin-left: 15%;
+  border: 1px solid blue;
+  overflow: hidden;
+  padding-bottom: 50px;
+}
+footer .footer-section .footer-column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+  align-items: center; /* Align items vertically in the center */
+}
+footer .footer-section .footer-column a {
+  float: none;
+  color: black;
+  padding: 1px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.footer-copyright-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  width: 75%;
+  text-align: left;
+  max-height: 350px;
+  margin-left: 15%;
+  border: 1px solid blue;
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+.footer-copyright-row .left-column {
+  font-size: 20px;
+}
+.footer-copyright-row .right-column {
+  text-align: center;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 15%;
+  padding: 5px;
+  height: 240px;
+}
+
+.column a {
+  float: none;
+  color: black;
+  padding: 5px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.column a:hover {
+  background-color: #ddd;
+}
+
+.fa {
+  margin-right: 10px;
+}
+
+/*# sourceMappingURL=shopping-bag.css.map */

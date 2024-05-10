@@ -1,0 +1,448 @@
+* {
+  box-sizing: border-box;
+}
+
+div {
+  border: 0px solid black;
+}
+
+body {
+  margin: 5px 15%;
+  font-family: Muli, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  background-color: white;
+  border: 0px solid black;
+}
+
+.root-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+header {
+  border: 0px solid black;
+}
+
+.header-row {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  justify-content: center; /* Align items horizontally in the center */
+  align-items: center; /* Align items vertically in the center */
+  column-gap: 30px;
+}
+
+.left-column {
+  float: left;
+  width: 40%;
+  border: 0 solid red;
+}
+
+.middle-column {
+  width: 50%;
+  margin-left: 10px;
+  border: 0 solid red;
+}
+
+.category-navbar {
+  width: 100%;
+  visibility: visible;
+  overflow: hidden;
+  border: 0 solid red;
+}
+
+.right-column {
+  float: left;
+  width: 40%;
+  justify-content: left; /* Align items horizontally in the center */
+  align-items: center; /* Align items vertically in the center */
+  border: 0 solid red;
+}
+
+.account-navbar {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  border: 0 solid red;
+  justify-content: left; /* Align items horizontally in the center */
+  align-items: center; /* Align items vertically in the center */
+}
+
+.dropdown-account {
+  display: None;
+  float: right;
+  width: 250px;
+  position: absolute;
+  margin-left: 80%;
+  background-color: #f9f9f9;
+  left: 0;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-account {
+  display: block;
+}
+
+.category-navbar a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 5px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  border: none;
+  outline: none;
+  color: black;
+  padding: 5px 16px;
+  background-color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.category-navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  width: 100%;
+  position: absolute;
+  background-color: #f9f9f9;
+  margin: 5px 20% 5px 20%;
+  left: 0;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content .header {
+  background: white;
+  padding: 5px;
+  color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+footer {
+  border: 0 solid green;
+}
+
+.footer-row {
+  float: right;
+  display: flex;
+  width: 100%;
+  margin: 5px 10px;
+  border: 0 solid red;
+}
+
+.footer-column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+  align-items: center; /* Align items vertically in the center */
+}
+
+.footer-column a {
+  float: none;
+  color: black;
+  padding: 1px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 15%;
+  padding: 5px;
+  height: 240px;
+}
+
+.column a {
+  float: none;
+  color: black;
+  padding: 5px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.column a:hover {
+  background-color: #ddd;
+}
+
+.menu {
+  /* Styles for the menu */
+}
+
+.menu li {
+  /* Styles for each menu item */
+}
+
+.menu li a {
+  /* Styles for anchor links within menu items */
+}
+
+.fa {
+  margin-right: 10px;
+}
+
+.search-container {
+  display: flex;
+  position: absolute;
+  width: 40%;
+  visibility: hidden;
+  column-gap: 5px;
+  border-bottom: 1px solid;
+}
+
+.search-form {
+  float: left;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    height: auto;
+  }
+}
+.email-field {
+  width: 180px;
+  margin: 5px 20px 25px;
+}
+
+.password-field {
+  width: 180px;
+  margin: 5px 20px;
+}
+
+.p-viewer {
+  z-index: 9999;
+  position: absolute;
+}
+
+.header h2 {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.sign-in-form {
+  border: 0 solid black;
+}
+
+.sign-in-button {
+  background-color: blue;
+  border: none;
+  color: white;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 12px;
+  margin: 20px 32px;
+  width: 150px;
+}
+
+.create-account-button {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  font-size: 10px;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 12px;
+  margin: 5px 35px 20px;
+  width: 150px;
+}
+
+.main {
+  display: block;
+  width: 100%;
+  border: 0 solid red;
+}
+
+.gallery-row {
+  display: flex;
+  width: 100%;
+  position: relative;
+  top: -50px;
+}
+.gallery-row .gallery-column {
+  float: left;
+  width: 33%;
+  border: 0px solid black;
+  opacity: 1;
+  padding: 5px 20px;
+}
+.gallery-row .gallery-column .gallery-image {
+  opacity: 1;
+  width: 100%;
+  float: left;
+  margin: 5px 5px;
+}
+.gallery-row .gallery-column .gallery-text {
+  float: right;
+  position: relative;
+  width: 250px;
+  top: -90px;
+  margin-right: -20px;
+  background-color: black;
+  border-bottom: 5px solid blue;
+  color: #fff;
+  padding: 10px 10px;
+}
+.gallery-row .gallery-column .gallery-text h1 {
+  font-size: 20px;
+}
+
+.carousel {
+  width: 100%;
+  display: flex;
+  height: 600px;
+  background-color: #eee;
+}
+.carousel .hero-text {
+  float: left;
+  width: 50%;
+  padding-left: 150px;
+  padding-right: 40px;
+  padding-top: 120px;
+  border: 0px solid black;
+}
+.carousel .hero-text h1 {
+  font-size: 45px;
+}
+.carousel .hero-image {
+  float: left;
+  width: 50%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+hr {
+  width: 100%;
+  margin: 0 0;
+}
+
+.teaser-row {
+  diaply: flex;
+  width: 100%;
+}
+
+.solid-button {
+  background-color: blue;
+  color: white;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 12px;
+  font-size: 11px;
+  margin: 5px 5px;
+  width: 150px;
+}
+
+.white-button {
+  background-color: white;
+  color: black;
+  border: 1px solid blue;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 12px;
+  font-size: 11px;
+  margin: 5px 5px;
+  width: 150px;
+}
+
+.teaser-image-right {
+  display: flex;
+}
+.teaser-image-right .teaser-text-panel {
+  float: left;
+  width: 50%;
+}
+.teaser-image-right .teaser-image {
+  float: left;
+  width: 50%;
+}
+.teaser-image-right h2 {
+  font-size: 32px;
+}
+.teaser-image-right hr {
+  width: 90px;
+  border-color: blue;
+  border: 5px solid blue;
+  margin-top: 30px;
+}
+
+.teaser-image-left {
+  display: flex;
+  width: 100%;
+}
+.teaser-image-left .teaser-image {
+  float: right;
+  width: 55%;
+  margin-left: 70px;
+}
+.teaser-image-left .teaser-text-panel {
+  float: right;
+  width: 45%;
+  color: white;
+  background-color: black;
+  padding: 30px 50px 20px 50px;
+  margin: -20px 200px -20px 0;
+}
+.teaser-image-left h2 {
+  font-size: 48px;
+}
+
+.image-gallery {
+  display: flex;
+  width: 100%;
+}
+.image-gallery .gallery-column {
+  float: left;
+  width: 25%;
+  border: 0px solid black;
+  opacity: 1;
+  padding: 5px 20px;
+}
+.image-gallery .gallery-column .gallery-image {
+  width: 100%;
+  margin: 5px 5px;
+}
+.image-gallery .gallery-column .gallery-text {
+  width: 100%;
+  text-align: left;
+}
+.image-gallery .gallery-column .gallery-text p {
+  font-size: 20px;
+}
+
+/*# sourceMappingURL=assignment-3-styles.css.map */

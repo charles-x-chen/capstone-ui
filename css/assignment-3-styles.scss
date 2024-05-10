@@ -1,0 +1,487 @@
+
+* {
+  box-sizing: border-box;
+}
+
+$default-font-size: 12px;
+$default-font-family: Muli, Helvetica, sans-serif;
+$debug-border: 0px solid black;
+$debug-border-red: 0 solid red;
+
+div {
+  border: $debug-border
+}
+
+body {
+  margin: 5px 15%;
+  font-family: $default-font-family;
+  font-size: $default-font-size;
+  font-weight: 300;
+  background-color:white;
+  border: $debug-border;
+}
+
+.root-container {
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+header {
+  border: $debug-border;
+
+}
+
+.header-row {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  justify-content: center; /* Align items horizontally in the center */
+  align-items: center; /* Align items vertically in the center */
+
+  column-gap: 30px;
+}
+
+.left-column {
+  float: left;
+  width: 40%;
+  border: $debug-border-red;
+
+}
+
+.middle-column {
+  width: 50%;
+  margin-left: 10px;
+  border: $debug-border-red;
+}
+
+.category-navbar {
+  width: 100%;
+  visibility: visible;
+  overflow: hidden;
+  border: $debug-border-red;
+
+}
+
+
+.right-column {
+  float: left;
+
+  width: 40%;
+  justify-content: left; /* Align items horizontally in the center */
+  align-items: center; /* Align items vertically in the center */
+  border: $debug-border-red;
+
+}
+
+.account-navbar {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  border: $debug-border-red;
+  justify-content: left; /* Align items horizontally in the center */
+  align-items: center; /* Align items vertically in the center */
+}
+
+.dropdown-account {
+  display: None;
+  float: right;
+  width: 250px;
+  position: absolute;
+  margin-left: 80%;
+  background-color: #f9f9f9;
+  left: 0;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown:hover .dropdown-account {
+  display: block;
+}
+
+
+.category-navbar a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 5px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  border: none;
+  outline: none;
+  color: black;
+  padding: 5px 16px;
+  background-color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.category-navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  width: 100%;
+  position: absolute;
+  background-color: #f9f9f9;
+  margin: 5px 20% 5px 20%;
+  left: 0;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content .header {
+  background: white;
+  padding: 5px;
+  color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+footer {
+  border: 0 solid green;
+
+}
+
+.footer-row {
+  float: right;
+  display: flex;
+  width: 100%;
+  margin: 5px 10px;
+  border: $debug-border-red;
+}
+
+.footer-column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+  align-items: center; /* Align items vertically in the center */
+}
+
+.footer-column a {
+  float: none;
+  color: black;
+  padding: 1px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 15%;
+  padding: 5px;
+  height: 240px;
+}
+
+.column a {
+  float: none;
+  color: black;
+  padding: 5px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.column a:hover {
+  background-color: #ddd;
+}
+
+.menu {
+  /* Styles for the menu */
+}
+
+.menu li {
+  /* Styles for each menu item */
+}
+
+.menu li a {
+  /* Styles for anchor links within menu items */
+}
+
+.fa {
+  margin-right: 10px;
+}
+
+.search-container {
+  display: flex;
+  position: absolute;
+  width: 40%;
+  visibility: hidden;
+  column-gap: 5px;
+  border-bottom: 1px solid;
+}
+
+.search-form {
+  float: left;
+}
+
+
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.email-field {
+  width: 180px;
+  margin: 5px 20px 25px;
+}
+
+.password-field {
+  width: 180px;
+  margin: 5px 20px;
+}
+
+.p-viewer {
+  z-index: 9999;
+  position: absolute;
+}
+
+.header h2 {
+  font-size: 14px;
+  margin-bottom: 20px;
+
+}
+
+.sign-in-form {
+  border: 0 solid black;
+}
+
+@mixin round-button {
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 12px;
+}
+
+.sign-in-button {
+  background-color: blue;
+  border: none;
+  color: white;
+  @include round-button;
+  margin: 20px 32px;
+  width: 150px;
+}
+
+.create-account-button {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  font-size: 10px;
+  @include round-button;
+  margin: 5px 35px 20px;
+  width: 150px;
+}
+
+.main {
+  display: block;
+  width: 100%;
+  border: $debug-border-red
+}
+
+
+
+.gallery-row {
+  display: flex;
+  width: 100%;
+  position: relative;
+  top: -50px;
+
+  .gallery-column {
+    float: left;
+    width: 33%;
+    border: $debug-border;
+    opacity: 1;
+    padding: 5px 20px;
+
+    .gallery-image {
+      opacity: 1;
+      width: 100%;
+      float: left;
+      margin: 5px 5px;
+
+    }
+
+    .gallery-text {
+      float: right;
+      position: relative;
+      width: 250px;
+      top: -90px;
+      margin-right: -20px;
+      background-color: black;
+      border-bottom: 5px solid blue;
+      color: #fff;
+      h1 {
+        font-size: 20px;
+      }
+      padding: 10px 10px;
+    }
+
+  }
+}
+
+.carousel {
+  width: 100%;
+  display: flex;
+  height: 600px;
+  background-color: #eee;
+
+  .hero-text {
+    float: left;
+    width: 50%;
+    padding-left: 150px;
+    padding-right: 40px;
+    padding-top: 120px;
+    border: $debug-border;
+
+    h1 {
+      font-size: 45px;
+    }
+
+  }
+
+  .hero-image {
+    float: left;
+    width: 50%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+
+}
+
+
+hr {
+  width: 100%;
+  margin: 0 0;
+}
+
+.teaser-row {
+  diaply: flex;
+  width: 100%;
+}
+
+
+@mixin cta-button {
+  @include round-button;
+  font-size: 11px;
+  margin: 5px 5px;
+  width: 150px;
+}
+
+
+.solid-button {
+  background-color: blue;
+  color: white;
+  @include cta-button;
+}
+
+.white-button {
+  background-color: white;
+  color: black;
+  border: 1px solid blue;
+  @include cta-button;
+}
+
+.teaser-image-right {
+  display: flex;
+  .teaser-text-panel {
+    float: left;
+    width: 50%;
+  }
+  .teaser-image {
+    float: left;
+    width: 50%;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  hr {
+    width: 90px;
+    border-color: blue;
+    border: 5px solid blue;
+    margin-top: 30px;
+  }
+
+}
+
+.teaser-image-left {
+  display: flex;
+  width: 100%;
+
+  .teaser-image {
+    float: right;
+    width: 55%;
+    margin-left: 70px;
+  }
+
+  .teaser-text-panel {
+    float: right;
+    width: 45%;
+    color: white;
+    background-color: black;
+    padding: 30px 50px 20px 50px;
+    margin: -20px 200px -20px 0;
+  }
+
+  h2 {
+    font-size: 48px;
+  }
+
+}
+
+
+.image-gallery{
+  display: flex;
+  width: 100%;
+
+  .gallery-column {
+    float: left;
+    width: 25%;
+    border: $debug-border;
+    opacity: 1;
+    padding: 5px 20px;
+
+    .gallery-image {
+      width: 100%;
+      margin: 5px 5px;
+
+    }
+
+    .gallery-text {
+      width: 100%;
+      text-align: left;
+      p {
+        font-size: 20px;
+      }
+    }
+
+  }
+}
+

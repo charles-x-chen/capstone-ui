@@ -1,0 +1,32 @@
+.main {
+  width: 85%;
+  margin: 0 auto;
+  background: #ffffff;
+}
+
+header > h1 {
+  margin-bottom: 0;
+}
+
+.time-italic {
+  font: italic 0.7rem sans-serif;
+}
+
+.row {
+  display: flex;
+  gap: 100px 20px;
+}
+
+.left-column {
+  float: left;
+  width: 70%;
+}
+
+.right-column {
+  float: left;
+  width: 20%;
+}
+
+.main-nav {
+  float: left;
+}

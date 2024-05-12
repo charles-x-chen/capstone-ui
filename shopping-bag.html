@@ -7,10 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Capstone</title>
     <meta name="description" content="assignment-3"/>
-    <link rel="stylesheet" media="all" href="/css/aem-grid-12.css"/>
-    <link rel="stylesheet" media="all and (min-width: 1280px)" href="/css/capstone-desktop.css"/>
-    <link rel="stylesheet" media="all and (min-width: 320px)" href="/css/capstone-mobile.css"/>
-    <link rel="stylesheet" media="all" href="/css/shopping-bag.css"/>
+    <link rel="stylesheet" media="all" href="./css/aem-grid-12.css"/>
+    <link rel="stylesheet" media="all and (min-width: 1280px)" href="./css/capstone-desktop.css"/>
+    <link rel="stylesheet" media="all and (min-width: 320px)" href="./css/capstone-mobile.css"/>
+    <link rel="stylesheet" media="all" href="./css/shopping-bag.css"/>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/a821a2198f.js" crossorigin="anonymous"></script>
@@ -49,7 +49,7 @@
         <div class="aem-GridColumn aem-GridColumn--default--3 right-column">
             <nav class="account-navbar">
                 <div>
-                    <a id="shopping-bag" href="#shopping-bag"><img src="./img/icons/1-shopping-bag.jpg" alt="Bag"
+                    <a id="shopping-bag" href="/capstone-ui/shopping-bag.html"><img src="./img/icons/1-shopping-bag.jpg" alt="Bag"
                                                                    width="22px"
                                                                    height="24px"></img></a>
                 </div>
@@ -64,37 +64,39 @@
             <hr/>
         </div>
 
-        <section class="aem-Grid aem-Grid--12 bag-content-section">
-            <div class="aem-GridColumn aem-GridColumn--default--2 product-image-list">
-            </div>
-            <div class="aem-GridColumn aem-GridColumn--default--2 product-details-list">
-            </div>
+        <!-- Product List -->
+        <section class="aem-Grid aem-Grid--12 in-bag-content-section">
+            <!-- product list -->
+            <div id="inBagProductList" class="aem-GridColumn aem-GridColumn--default--7 in-bag-product-list">
 
-            <div class="aem-GridColumn aem-GridColumn--default--2 product-selectors">
-                <i class="fa fa-minus-circle remove-bg" aria-hidden="true"></i>
-                <input id="numProducts" class="num-products" type="number" name="numOfProducts" value="1"/>
-                <i class="fa fa-plus-circle add-bg" aria-hidden="true"></i>
-            </div>
-
-            <div class="aem-GridColumn aem-GridColumn--default--2 shopping-bag-actions">
 
             </div>
 
-            <div class="aem-GridColumn aem-GridColumn--default--4 pricing-summary">
+            <!-- Pricing summary -->
+            <div id="inBagPricingSummary" class="aem-GridColumn aem-GridColumn--default--5 in-bag-pricing-summary">
+                <h2>Pricing Summary</h2>
+                <div  class="aem-Grid aem-Grid--2">
+                    <span class="aem-GridColumn aem-GridColumn--default--1 summary-left-column">Subtotal</span><span class="aem-GridColumn aem-GridColumn--default--1 summary-right-column">$388.00</span></div>
+                <div  class="aem-Grid aem-Grid--2"><span class="aem-GridColumn aem-GridColumn--default--1 summary-left-column">Coupon</span><span class="aem-GridColumn aem-GridColumn--default--1 summary-right-column">$388.00</span></div>
+                <div  class="aem-Grid aem-Grid--2"><span class="aem-GridColumn aem-GridColumn--default--1 summary-left-column">Gift Card</span><span class="aem-GridColumn aem-GridColumn--default--1 summary-right-column">$388.00</span></div>
+                <div  class="aem-Grid aem-Grid--2"><span class="aem-GridColumn aem-GridColumn--default--1 summary-left-column">Estimated tax</span><span class="aem-GridColumn aem-GridColumn--default--1 summary-right-column">$388.00</span></div>
+                <div  class="aem-Grid aem-Grid--2"><span class="aem-GridColumn aem-GridColumn--default--1 summary-left-column">Estimated shipping</span><span class="aem-GridColumn aem-GridColumn--default--1 summary-right-column">$388.00</span></div>
+                <div  class="aem-Grid aem-Grid--2"><span class="aem-GridColumn aem-GridColumn--default--1 summary-total">Estimated Total</span><span class="aem-GridColumn aem-GridColumn--default--1 summary-total-price">$388.00</span></div>
             </div>
-
         </section>
 
 
-        <section class="aem-Grid aem-Grid--12 misc-section">
-            <div class="aem-GridColumn aem-GridColumn--default--8 misc-accordian">
-                <div class="shipping-accordian">
+        <!-- information panel -->
+        <section class="aem-Grid aem-Grid--12 in-bag-information-section">
+            <div class="aem-GridColumn aem-GridColumn--default--7 information-container">
+                <div class="shipping-accordion">
+
 
                 </div>
-                <div class="coupon-accordian">
+                <div class="coupon-accordion">
 
                 </div>
-                <div class="gift-accordian">
+                <div class="gift-accordion">
 
                 </div>
             </div>

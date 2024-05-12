@@ -3,7 +3,7 @@
 }
 
 div {
-  border: 1px solid blue;
+  border: 0px solid blue;
 }
 
 body {
@@ -12,7 +12,7 @@ body {
   font-size: 12px;
   font-weight: 300;
   background-color: var(--white);
-  border: 1px solid blue;
+  border: 0px solid blue;
   max-width: unset;
   width: 100%;
 }
@@ -25,22 +25,21 @@ body {
   width: 100%;
   max-width: unset;
   max-height: unset;
+  padding: 5px;
 }
 
 .shopping-bag-page-title {
   display: block;
   justify-content: center;
   width: 70%;
-  margin-left: 15%;
-  border: 1px solid blue;
+  margin: auto;
+  border: 0px solid blue;
   overflow: hidden;
-  padding-left: 50px;
-  padding-bottom: 50px;
   background: white;
-  margin-top: 20px;
 }
 .shopping-bag-page-title h1 {
   text-align: center;
+  font-size: 40px;
 }
 .shopping-bag-page-title hr {
   width: 100px;
@@ -48,50 +47,111 @@ body {
   background: blue;
 }
 
-.bag-content-section {
+.in-bag-content-section {
   display: flex;
   flex-direction: row;
   justify-content: center;
   width: 70%;
-  height: 680px;
+  min-height: 480px;
   margin-left: 15%;
-  border: 1px solid blue;
+  border: 0px solid blue;
   overflow: hidden;
-  padding-left: 50px;
-  padding-bottom: 50px;
+  padding: 5px;
   background: white;
-  margin-top: 50px;
 }
-.bag-content-section .product-image-list .list-image-bg {
-  margin-left: 10px;
+.in-bag-content-section .in-bag-product-list {
+  border: 0px solid blue;
 }
-.misc-section {
-  display: inline-block;
+.in-bag-content-section .in-bag-product-list .in-bag-product-image {
+  padding: 10px;
+}
+.in-bag-content-section .in-bag-product-list .in-bag-product-details .in-bag-product-info h3 {
+  width: 200%;
+}
+.in-bag-content-section .in-bag-product-list .in-bag-selector {
+  width: 100%;
+  height: 100%;
+  margin-top: 10%;
+  padding: 10px;
+}
+.in-bag-content-section .in-bag-product-list .in-bag-selector .product-select {
+  width: 100%;
+}
+.in-bag-content-section .in-bag-product-list .in-bag-selector .product-select .num-products {
+  width: 100px;
+  border-radius: 5px;
+  height: 30px;
+  margin: auto;
+  text-align: center;
+}
+.in-bag-content-section .in-bag-product-list .in-bag-selector .product-select .remove-bg {
+  color: rgba(100, 100, 100, 0.8);
+  font-size: 22px;
+}
+.in-bag-content-section .in-bag-product-list .in-bag-selector .product-select .add-bg {
+  color: rgba(100, 100, 100, 0.8);
+  font-size: 22px;
+}
+.in-bag-content-section .in-bag-product-list .in-bag-action {
+  width: 100%;
+  margin-top: 30px;
+  padding: 10px;
+}
+.in-bag-content-section .in-bag-product-list .in-bag-action div {
+  padding: 10px;
+}
+.in-bag-content-section .in-bag-pricing-summary {
+  width: 90%;
+  border: 1px solid black;
+  height: fit-content;
+  margin: 5%;
+  padding: 20px;
+}
+.in-bag-content-section .in-bag-pricing-summary .summary-left-column {
+  text-align: left;
+  padding: 10px;
+}
+.in-bag-content-section .in-bag-pricing-summary .summary-right-column {
+  text-align: right;
+  padding: 10px;
+}
+.in-bag-content-section .in-bag-pricing-summary .summary-total {
+  text-align: left;
+  padding: 10px;
+  font-weight: bold;
+}
+.in-bag-content-section .in-bag-pricing-summary .summary-total-price {
+  text-align: right;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.in-bag-information-section {
+  display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: left;
   width: 70%;
-  height: auto;
-  margin-left: 18%;
-  border: 1px solid blue;
+  min-height: 200px;
+  margin-left: 15%;
+  border: 0px solid blue;
   overflow: hidden;
-  padding-bottom: 50px;
   background: white;
 }
-.misc-section .misc-accordian {
+.in-bag-information-section .information-container {
   font-size: 36px;
 }
-.misc-section .misc-accordian .shipping-accordian {
+.in-bag-information-section .information-container .shipping-accordian {
   font-size: 36px;
 }
-.misc-section .misc-accordian .coupon-accordian {
+.in-bag-information-section .information-container .coupon-accordian {
   font-size: 36px;
 }
-.misc-section .misc-accordian .gift-accordian {
+.in-bag-information-section .information-container .gift-accordian {
   font-size: 36px;
 }
 
 header {
-  border: 1px solid blue;
+  border: 0px solid blue;
 }
 
 .header-row {
@@ -156,7 +216,7 @@ footer .footer-section {
   width: 75%;
   max-height: 350px;
   margin-left: 15%;
-  border: 1px solid blue;
+  border: 0px solid blue;
   overflow: hidden;
   padding-bottom: 50px;
 }
@@ -183,7 +243,7 @@ footer .footer-section .footer-column a {
   text-align: left;
   max-height: 350px;
   margin-left: 15%;
-  border: 1px solid blue;
+  border: 0px solid blue;
   overflow: hidden;
   padding-bottom: 20px;
 }

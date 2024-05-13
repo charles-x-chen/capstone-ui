@@ -14,6 +14,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/a821a2198f.js" crossorigin="anonymous"></script>
+
 </head>
 
 
@@ -52,6 +53,7 @@
                     <a id="shopping-bag" href="/capstone-ui/shopping-bag.html"><img src="./img/icons/1-shopping-bag.jpg" alt="Bag"
                                                                    width="22px"
                                                                    height="24px"></img></a>
+                    <span id="numProductsInCart" class="num-products-in-cart">2</span>
                 </div>
             </nav>
         </div>
@@ -80,12 +82,16 @@
                 <hr/>
 
                 <h3>Quantity</h3>
-                <div id="productSelect" class="product-select">
-                    <i class="fa fa-minus-circle remove-bg" aria-hidden="true"></i>
-                    <input id="numProducts" class="num-products" type="number" name="numOfProducts" value="1"/>
-                    <i class="fa fa-plus-circle add-bg" aria-hidden="true"></i>
-                </div>
-                <button class="blue-button">ADD TO CART</button>
+                <form id="addToCartForm" action="">
+                    <input type="hidden" id="cartUserId" value="1"/>
+                    <input type="hidden" id="cartProductId"/>
+                    <div id="productSelect" class="product-select">
+                        <i class="fa fa-minus-circle remove-bg" aria-hidden="true"></i>
+                        <input id="numProducts" class="num-products" type="number" name="numOfProducts" value="1"/>
+                        <i class="fa fa-plus-circle add-bg" aria-hidden="true"></i>
+                    </div>
+                    <button id="cart-submit" type="submit" class="blue-button">ADD TO CART</button>
+                </form>
                 <div class="social-panel">
                     <i class="fa fa-heart-o heart-bg" aria-hidden="true">&nbsp;Love</i>
                     <i class="fa fa-share-alt share-bg" aria-hidden="true">&nbsp;Share</i>
@@ -148,7 +154,7 @@
 
     </div>
 
-    <script src="./js/product-details.js"></script>
+    <script type="module"  src="./js/product-details.js"></script>
 </div>
 </body>
 </html>

@@ -73,10 +73,12 @@ body {
 .product-details-section .remove-bg {
   color: rgba(100, 100, 100, 0.8);
   font-size: 20px;
+  cursor: pointer;
 }
 .product-details-section .add-bg {
   color: rgba(100, 100, 100, 0.8);
   font-size: 20px;
+  cursor: pointer;
 }
 .product-details-section .blue-button {
   width: 318px;
@@ -84,6 +86,7 @@ body {
   background: blue;
   color: white;
   border-radius: 6px;
+  cursor: pointer;
 }
 .product-details-section .social-panel {
   width: 318px;

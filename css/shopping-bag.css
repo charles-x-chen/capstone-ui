@@ -140,14 +140,22 @@ body {
 .in-bag-information-section .information-container {
   font-size: 36px;
 }
-.in-bag-information-section .information-container .shipping-accordian {
-  font-size: 36px;
+.in-bag-information-section .information-container .accordion-header-div {
+  padding-right: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
 }
-.in-bag-information-section .information-container .coupon-accordian {
-  font-size: 36px;
+.in-bag-information-section .information-container .shipping-accordion {
+  font-size: 14px;
 }
-.in-bag-information-section .information-container .gift-accordian {
-  font-size: 36px;
+.in-bag-information-section .information-container .coupon-accordion {
+  font-size: 14px;
+}
+.in-bag-information-section .information-container .gift-accordion {
+  font-size: 14px;
 }
 
 header {

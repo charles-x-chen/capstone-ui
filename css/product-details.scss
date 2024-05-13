@@ -90,11 +90,15 @@ body {
   .remove-bg {
     color: rgba(100 100 100 / 80%);
     font-size: 20px;
+    cursor: pointer;
+
   }
 
   .add-bg {
     color: rgba(100 100 100 / 80%);
     font-size: 20px;
+    cursor: pointer;
+
   }
 
   .blue-button {
@@ -103,6 +107,7 @@ body {
     background: blue;
     color: white;
     border-radius: 6px;
+    cursor: pointer;
   }
 
   .social-panel {

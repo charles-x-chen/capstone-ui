@@ -1,3 +1,4 @@
+import {loadShoppingCartNumber} from "./common-functions.mjs";
 
 function searchClicked() {
   console.log("searClicked() called...")
@@ -123,6 +124,13 @@ function showProductDetails(productJson) {
     spanElem = document.createElement("span");
     spanElem.innerText = '('+productJson.rating.count+')';
     ratingContainer.append(spanElem);
+
+    x = document.getElementById("cartProductId");
+    x.setAttribute("value", productJson.id);
+
+    x = document.getElementById("cartUserId");
+    x.setAttribute("value", "1");
+
 }
 
 function showProductImageList(productJson) {
@@ -163,6 +171,55 @@ function loadProductDetails(productJson) {
 
 }
 
+function addToCart() {
+    console.log("calling addToCart()");
+
+    const numProductsField = document.getElementById("numProducts");
+    const numProducts = numProductsField.value;
+
+    const productIdField = document.getElementById("cartProductId");
+    const productId = productIdField.value;
+
+    fetch('https://fakestoreapi.com/carts',{
+        method:"POST",
+        body:JSON.stringify(
+            {
+                userId:1,
+                date:"2020-02-03",
+                products:[{productId:productId,quantity:numProducts}]
+            }
+        )
+    })
+        .then(res=>res.json())
+        .then(json=>console.log(json))
+
+    return false;
+}
+
+function initialiseForm() {
+    let addToCartForm = document.getElementById("addToCartForm");
+    addToCartForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        let userId = document.getElementById("cartUserId");
+        let productId = document.getElementById("cartProductId");
+        let numProducts = document.getElementById("numProducts");
+
+        fetch('https://fakestoreapi.com/carts',{
+            method:"POST",
+            body:JSON.stringify(
+                {
+                    userId:userId,
+                    date:"2020-02-03",
+                    products:[{productId:productId,quantity:numProducts}]
+                }
+            )
+        })
+            .then(res=>res.json())
+            .then(json=>console.log(json))
+    });
+
+}
 
 window.onload = function productDetailsPageLoad() {
     const currentUrl = window.location.href;
@@ -179,7 +236,10 @@ window.onload = function productDetailsPageLoad() {
 
     fetch('https://fakestoreapi.com/products/'+productId)
         .then(res=>res.json())
-        .then(json=>loadProductDetails(json));
+        .then(json=>loadProductDetails(json))
+        .then(() => loadShoppingCartNumber())
+        .then(() => initialiseForm());
+
 }
 
 

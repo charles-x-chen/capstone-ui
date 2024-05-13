@@ -1,3 +1,4 @@
+import {loadShoppingCartNumber} from "./common-functions.mjs";
 
 function searchClicked() {
   console.log("searClicked() called...")
@@ -159,7 +160,10 @@ function loadCategoryProducts(categories) {
 window.onload = function categoryPageLoad() {
     fetch('https://fakestoreapi.com/products/categories')
         .then(res=>res.json())
-        .then(categories=>loadCategoryProducts(categories));
+        .then(categories=>loadCategoryProducts(categories))
+        .then(() => loadShoppingCartNumber());
+
+
 }
 
 

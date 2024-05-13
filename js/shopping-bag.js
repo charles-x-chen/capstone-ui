@@ -1,3 +1,12 @@
+import {loadNumProductsInCart, loadShoppingCartNumber} from "./common-functions.mjs";
+
+
+// some globals
+var subtotal;
+const coupon = -5.00;
+const gift = -10.00;
+var tax; //15% of subtotal
+const TAX_RATE = 0.15;
 
 function searchClicked() {
   console.log("searClicked() called...")
@@ -35,7 +44,6 @@ function signInClicked() {
   }
 
 }
-
 
 function genHtmlForProduct(pJson) {
     var gridDiv = document.createElement('div');
@@ -75,8 +83,18 @@ function genHtmlForProduct(pJson) {
     return gridDiv;
 }
 
-function showProductPricingSummary(productJson) {
+function showProductPricingSummary() {
+    console.log("subtotal show pricing info:" + subtotal);
 
+    var x = document.getElementById("cartSubtotal");
+    x.innerText = "$"+subtotal.toFixed(2);
+
+    tax = subtotal * TAX_RATE;
+    x = document.getElementById("cartTax");
+    x.innerText = "$"+tax.toFixed(2);
+
+    x = document.getElementById("cartEstimatedTotal");
+    x.innerText = "$"+(subtotal - coupon - gift + tax).toFixed(2);
 
 }
 
@@ -88,7 +106,14 @@ function genProductDetailsDiv(parentDiv, cartProductJson) {
         .then(json => loadProductDetails(parentDiv, json, cartProductJson.quantity));
 }
 
-function loadProductDetails(parentDiv, productJson, quantity) {
+ function loadProductDetails(parentDiv, productJson, quantity) {
+    subtotal += (quantity * productJson.price);
+    console.log("subtotal prod details:" + subtotal);
+
+    showProductPricingSummary();
+
+
+
     // now use the details to build the div structure
     var prodDiv = document.createElement("div");
     prodDiv.setAttribute("id", "inBagProductId-" + productJson.id);
@@ -97,18 +122,23 @@ function loadProductDetails(parentDiv, productJson, quantity) {
     prodDiv.classList.add("in-bag-product-details");
 
     // image div
+
     var imgDiv = document.createElement("div");
     imgDiv.setAttribute("id", "inBagProductImage-" + productJson.id);
     imgDiv.classList.add("aem-GridColumn");
     imgDiv.classList.add("aem-GridColumn--default--3");
     imgDiv.classList.add("in-bag-product-image");
 
+     var a = document.createElement("a");
+     a.setAttribute("href", "/capstone-ui/product-details.html?x=1&productId="+productJson.id);
     var img = document.createElement("img");
     img.setAttribute("src", productJson.image);
     img.setAttribute("alt", "");
     img.setAttribute("width", "100%");
     img.setAttribute("height", "100%");
-    imgDiv.append(img);
+     a.append(img)
+
+     imgDiv.append(a);
     prodDiv.append(imgDiv);
 
     // info
@@ -183,23 +213,25 @@ function loadProductDetails(parentDiv, productJson, quantity) {
 
 }
 
-function genShoppingBagPage(cartJson) {
+ function genShoppingBagPage(cartJson) {
     // cartJson is a list of JSON objects for products in the Cart.
     var listContainer = document.getElementById("inBagProductList");
     const productList = cartJson[0].products;
 
     for (let i = 0; i < productList.length; i++) {
         const prodJson = productList[i];
-        genProductDetailsDiv(listContainer, prodJson);
+         genProductDetailsDiv(listContainer, prodJson);
+        console.log(subtotal);
     }
-
-    showProductPricingSummary(cartJson);
-
 
 }
 
+window.onload = async function shoppingBagPageLoad() {
+    subtotal = 0;
+    tax = 0;
+    console.log("subtotal initial:" + subtotal);
 
-window.onload = function shoppingBagPageLoad() {
+
     const currentUrl = window.location.href;
     console.log(currentUrl);
 
@@ -211,11 +243,13 @@ window.onload = function shoppingBagPageLoad() {
     if (params.has('userId')) {
         userId = params.get("userId");
     }
-    console.log(userId);
+    console.log("UserId=" + userId);
 
-    fetch('https://fakestoreapi.com/carts/user/' + userId)
+     fetch('https://fakestoreapi.com/carts/user/' + userId)
         .then(res=>res.json())
-        .then(json=>genShoppingBagPage(json));
+        .then(json=>genShoppingBagPage(json))
+         .then(() => loadShoppingCartNumber());
+
 }
 
 
